@@ -34,5 +34,3 @@ Your project and database are deployed to your AWS instance.
 * Java Collections Framework
 * MySQL Databases
 * Add other technologies 
-*
-*
