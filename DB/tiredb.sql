@@ -52,6 +52,6 @@ START TRANSACTION;
 USE `tiredb`;
 INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (1, 'Sonata', '2012-02-02', 22.5, 173.00, 'A better choice', 'CN', NULL);
 INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (2, 'Sonomo', '2009-12-10', 22.5, 150.00, 'A not so better choice', 'US', NULL);
+INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (3, 'Bridestone', '2009-12-10', 17, 225.00, 'A not so better choice', 'US', NULL);
 
 COMMIT;
-
