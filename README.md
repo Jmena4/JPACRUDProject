@@ -24,3 +24,15 @@ The MySQL table is mapped to a valid JPA Entity and tested to ensure the mapping
 A Spring project allows for a user to perform basic CRUD operations on your entity via a web interface.
 
 Your project and database are deployed to your AWS instance.
+
+### Technologies Used
+* Object-Oriented Design
+	* Polymorphism
+	* Inheritance
+	* Abstraction
+	* Encapsulation
+* Java Collections Framework
+* MySQL Databases
+* 
+*
+*
