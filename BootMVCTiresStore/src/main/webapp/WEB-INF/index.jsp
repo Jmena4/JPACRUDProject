@@ -1,13 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib
+	uri="http://jakarta.apache.org/taglibs/standard/permittedTaglibs"
+	prefix=""%><%@ page language="java"
+	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>MVC Tire Store</title>
 </head>
-<body>
 <h1>Welcome to Tire Store!</h1>
-<!-- <a href="https://truckfreighter.com/wp-content/uploads/2018/06/best-drive-tires-for-semi-truck.jpg"></a>  -->
+<body>
+	<div class="container-fluid">
+		<form action="getTire.do" method="GET">
+			Tire ID: <input type="text" name="tid" /> <input type="submit"
+				value="Show Tire" class="btn btn-primary" />
+		</form>
+		<c:if test="${not empty allTires }">
+			<dl>
+				<c:forEach var='t' items="${allTires }">
+					<dt>
+						<a href="getTire.do?tid=${t.id }">${t.name }</a>
+
+					</dt>
+					<dd></dd>
+
+
+				</c:forEach>
+
+			</dl>
+
+		</c:if>
+	</div>
 </body>
 </html>
+<!-- <a href="https://truckfreighter.com/wp-content/uploads/2018/06/best-drive-tires-for-semi-truck.jpg"></a>  -->
