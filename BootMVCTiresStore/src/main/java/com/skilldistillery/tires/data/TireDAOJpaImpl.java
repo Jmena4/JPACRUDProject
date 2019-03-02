@@ -24,6 +24,14 @@ public class TireDAOJpaImpl implements TireDAO {
 	}
 
 	@Override
+	public List<Tire> findAll() {
+		List<Tire> tires = null;
+		String sql = "SELECT tire FROM Tire tire";
+		tires = em.createQuery(sql, Tire.class).getResultList();
+		return tires;
+	}
+
+	@Override
 	public Tire create(Tire tire) {
 		// TODO Auto-generated method stub
 		return null;
@@ -41,12 +49,5 @@ public class TireDAOJpaImpl implements TireDAO {
 		return null;
 	}
 
-	@Override
-	public List<Tire> findAll() {
-		List<Tire> tires = null;
-		String sql = "SELECT tire FROM Tire tire";
-		tires = em.createQuery(sql, Tire.class).getResultList();
-		return tires;
-	}
 
 }
