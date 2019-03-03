@@ -9,7 +9,7 @@ public interface TireDAO {
 
 	public List<Tire> findAll();
 
-	public Tire create(Tire tire);
+	public Boolean create(int id);
 
 	public Tire update(int id, Tire tire);
 
