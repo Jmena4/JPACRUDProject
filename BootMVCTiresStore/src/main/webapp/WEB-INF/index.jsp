@@ -8,11 +8,12 @@
 <head>
 <meta charset="UTF-8">
 <title>MVC Tire Store</title>
+<jsp:include page="bootstrapHead.jsp"></jsp:include>
 </head>
 <h1>Welcome to Tire Store!</h1>
 <body>
 	<div class="container-fluid">
-		<form action="getTire.do" method="GET">
+		<form action="${tire }" method="GET">
 			Tire ID: <input type="text" name="tid" /> <input type="submit"
 				value="Show Tire" class="btn btn-primary" />
 		</form>
@@ -23,7 +24,7 @@
 						<a href="getTire.do?tid=${t.id }">${t.name }</a>
 
 					</dt>
-					<dd></dd>
+					<dd>${t.productDescription }</dd>
 
 
 				</c:forEach>
@@ -31,7 +32,7 @@
 			</dl>
 
 		</c:if>
-	</div>
+		<jsp:include page="bootstrapFoot.jsp"></jsp:include>
 </body>
 </html>
 <!-- <a href="https://truckfreighter.com/wp-content/uploads/2018/06/best-drive-tires-for-semi-truck.jpg"></a>  -->
