@@ -18,7 +18,7 @@ public class Tire {
 	private int id;
 
 	private String name;
-	
+
 	@Temporal(TemporalType.DATE)
 	@Column(name = "manufactured_date")
 	private Date manufacturedDate;
@@ -98,6 +98,19 @@ public class Tire {
 	}
 
 	public Tire() {
+	}
+
+	
+
+	public Tire(String name, Date manufacturedDate, Double size, double purchasePrice, String productDescription,
+			String originCountryCode) {
+		super();
+		this.name = name;
+		this.manufacturedDate = manufacturedDate;
+		this.size = size;
+		this.purchasePrice = purchasePrice;
+		this.productDescription = productDescription;
+		this.originCountryCode = originCountryCode;
 	}
 
 	@Override
