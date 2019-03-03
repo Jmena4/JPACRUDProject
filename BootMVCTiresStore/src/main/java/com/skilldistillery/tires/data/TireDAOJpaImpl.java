@@ -30,24 +30,41 @@ public class TireDAOJpaImpl implements TireDAO {
 		tires = em.createQuery(sql, Tire.class).getResultList();
 		return tires;
 	}
+//int id, String name, Date manufacturedDate, Double size, double purchasePrice,
+//	String productDescription, String originCountryCode
 
 	@Override
-	public Tire create(Tire tire) {
-		// TODO Auto-generated method stub
-		return null;
+	public Boolean create(int id) {
+		Tire tire = em.find(Tire.class, id);
+//		em.getTransaction().begin();
+		em.persist(tire);
+		em.flush();
+		Boolean test = !em.contains(tire);
+//		em.getTransaction().commit();
+		em.close();
+		return test;
 	}
 
 	@Override
 	public Tire update(int id, Tire tire) {
-		// TODO Auto-generated method stub
-		return null;
+		em.getTransaction().begin();
+		Tire managedCustomer = em.find(Tire.class, id);
+
+		managedCustomer.setName("New Name");
+		em.getTransaction().commit();
+		em.close();
+		return managedCustomer;
 	}
 
 	@Override
 	public Boolean delete(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Tire tire = em.find(Tire.class, id);
+//		em.getTransaction().begin();
+		em.remove(tire);
+//		em.getTransaction().commit();
+		Boolean test = !em.contains(tire);
+		em.close();
+		return test;
 	}
-
 
 }
