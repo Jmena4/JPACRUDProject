@@ -12,7 +12,7 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 <title>Tire</title>
 </head>
-<h5>${tire.name}</h5>
+<h2>${tire.name}</h2>
 <body>
 	<div class="container-fluid">
 		<div class = "row pt-5 m-auto">
@@ -28,7 +28,7 @@
 		
 		</c:when>
 		</c:choose>
-		<form action= "editTire.do" method="GET" modelAttribute="tire">
+		<form action= "editTire.do" method="GET" >
 			<input type="hidden" name="tireId" value="${tire.id }"/>
 			<input class="btn btnResult btn-primary" type="submit" value="EDIT"/>
 		</form>

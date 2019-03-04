@@ -37,27 +37,34 @@ public class TireController {
 	}
 
 	@RequestMapping(path = "addTire.do", method = RequestMethod.POST)
-	public ModelAndView createTire(@Valid Tire tire, int id) throws SQLException {
+	public ModelAndView createTire(@Valid Tire tire) throws SQLException {
 		ModelAndView mv = new ModelAndView();
-		boolean isTireAddedSuccessful = tireDAO.create(id);
+//		boolean isTireAddedSuccessful = tireDAO.create(tire);
+		tire = tireDAO.create(tire);
 
-		if (!isTireAddedSuccessful) {
-			mv.setViewName("WEB-INF/errorPage.jsp");
-			return mv;
-		} else {
-			mv.setViewName("WEB-INF/tire/show.jsp");
-			return mv;
-		}
+//		mv.addObject("editTire", isTireAddedSuccessful);
+		mv.addObject("addTire", tire);
+		mv.setViewName("WEB-INF/tire/edit.jsp");
+		return mv;
+
+//		if (!isTireAddedSuccessful) {
+//			mv.setViewName("WEB-INF/errorPage.jsp");
+//			return mv;
+//		} else {
+//			mv.addObject("editTire", tire);
+//			mv.setViewName("WEB-INF/tire/edit.jsp");
+//			return mv;
+//		}
 
 	}
 
 	@RequestMapping(path = "editTire.do", method = RequestMethod.GET)
-	public ModelAndView editTire(int tireId) throws SQLException {
+	public ModelAndView editTire(Tire tire) throws SQLException {
 		ModelAndView mv = new ModelAndView();
-		Tire updateTireObj = tireDAO.findById(tireId);
+		Tire updateTireObj = tireDAO.findById(tire.getId());
 		System.out.println(updateTireObj);
-		mv.addObject("tire", updateTireObj);
-		mv.setViewName("WEB-INF/index.jsp");
+		mv.addObject("editTire", updateTireObj);
+		mv.setViewName("WEB-INF/edit.jsp");
 		return mv;
 	}
 

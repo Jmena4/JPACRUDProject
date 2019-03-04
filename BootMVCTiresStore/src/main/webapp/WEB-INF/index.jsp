@@ -17,6 +17,11 @@
 			Tire ID: <input type="text" name="tid" /> <input type="submit"
 				value="Show Tire" class="btn btn-primary" />
 		</form>
+		<form action="addTire" method="POST">
+			 <input type="submit"
+				value="Add Tire" class="btn btn-primary" />
+		</form>
+		</div>
 		<c:if test="${not empty allTires }">
 			<dl>
 				<c:forEach var='t' items="${allTires }">

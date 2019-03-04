@@ -34,24 +34,32 @@ public class TireDAOJpaImpl implements TireDAO {
 //	String productDescription, String originCountryCode
 
 	@Override
-	public Boolean create(int id) {
-		Tire tire = em.find(Tire.class, id);
+	public Tire create(Tire tire) {
+//		tire = em.find(Tire.class, id);
 //		em.getTransaction().begin();
 		em.persist(tire);
 		em.flush();
-		Boolean test = !em.contains(tire);
+//		Boolean test = !em.contains(tire);
 //		em.getTransaction().commit();
 		em.close();
-		return test;
+		return tire;
 	}
 
 	@Override
 	public Tire update(int id, Tire tire) {
-		em.getTransaction().begin();
-		Tire managedCustomer = em.find(Tire.class, id);
+		Tire managedCustomer = em.find(Tire.class, tire.getId());
+		managedCustomer.setManufacturedDate(tire.getManufacturedDate());
+		managedCustomer.setName(tire.getName());
+		managedCustomer.setProductDescription(tire.getProductDescription());
+		managedCustomer.setPurchasePrice(tire.getPurchasePrice());
+		managedCustomer.setSize(tire.getSize());
+		managedCustomer.setOriginCountryCode(tire.getOriginCountryCode());
+//		em.getTransaction().begin();
 
-		managedCustomer.setName("New Name");
-		em.getTransaction().commit();
+//		em.getTransaction().commit();
+		em.persist(managedCustomer);
+		em.flush();
+//		Boolean rest = !em.contains(tire);
 		em.close();
 		return managedCustomer;
 	}
