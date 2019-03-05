@@ -21,18 +21,27 @@ public class TireController {
 	@Autowired
 	private TireDAO tireDAO;
 
-	@RequestMapping(path = "/", method = RequestMethod.GET)
+	@RequestMapping(path = { "/", "home.do" }, method = RequestMethod.GET)
 	public String index(Model model) {
 		model.addAttribute("allTires", tireDAO.findAll());
 		return "WEB-INF/index.jsp";
 	}
 
 	@RequestMapping(path = "getTire.do", method = RequestMethod.GET)
-	public ModelAndView getTire(@RequestParam("tid") int tid) {
+	public ModelAndView getTire(@RequestParam("tid") int tireId) {
 		ModelAndView mv = new ModelAndView();
-		Tire tire = tireDAO.findById(tid);
+		Tire tire = tireDAO.findById(tireId);
 		mv.addObject("tire", tire);
 		mv.setViewName("WEB-INF/tire/show.jsp");
+		System.out.println("in get tire.do");
+		System.out.println("################ getTire.do " + tire);
+		return mv;
+	}
+
+	@RequestMapping(path = "addTire.do", method = RequestMethod.GET)
+	public ModelAndView sendToTireCreate() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/addTire.jsp");
 		return mv;
 	}
 
@@ -44,7 +53,7 @@ public class TireController {
 
 //		mv.addObject("editTire", isTireAddedSuccessful);
 		mv.addObject("addTire", tire);
-		mv.setViewName("WEB-INF/tire/edit.jsp");
+		mv.setViewName("WEB-INF/tire/show.jsp");
 		return mv;
 
 //		if (!isTireAddedSuccessful) {
@@ -58,25 +67,24 @@ public class TireController {
 
 	}
 
-	@RequestMapping(path = "editTire.do", method = RequestMethod.GET)
-	public ModelAndView editTire(Tire tire) throws SQLException {
+	@RequestMapping(path = "editTire.do", method = RequestMethod.POST)
+	public ModelAndView editTire(int tireId, Tire tire) throws SQLException {
 		ModelAndView mv = new ModelAndView();
-		Tire updateTireObj = tireDAO.findById(tire.getId());
-		System.out.println(updateTireObj);
-		mv.addObject("editTire", updateTireObj);
-		mv.setViewName("WEB-INF/edit.jsp");
+//		tireDAO.update(tireId, tire);
+		System.out.println("################ editTire.do " + tire);
+		System.out.println(tireId);
+		tireDAO.update(tireId, tire);
+		mv.addObject("editTire", tire);
+		mv.setViewName("WEB-INF/tire/show.jsp");
 		return mv;
 	}
 
-	@RequestMapping(path = "deleteFilm.do", method = RequestMethod.POST)
-	public ModelAndView deleteTire(int tireId) throws SQLException {
+	@RequestMapping(path = "deleteTire.do", method = RequestMethod.POST)
+	public ModelAndView deleteTire(int tireId, Tire tire) throws SQLException {
 		ModelAndView mv = new ModelAndView();
 		boolean isSuccessful = tireDAO.delete(tireId);
 		mv.addObject("removed", isSuccessful);
 		mv.setViewName("WEB-INF/index.jsp");
-		if (!isSuccessful) {
-			return null;
-		}
 		return mv;
 	}
 }

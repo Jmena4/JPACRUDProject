@@ -1,6 +1,6 @@
 package com.skilldistillery.tiredata.entities;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +19,6 @@ public class Tire {
 
 	private String name;
 
-	@Temporal(TemporalType.DATE)
 	@Column(name = "manufactured_date")
 	private Date manufacturedDate;
 

@@ -8,17 +8,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<a href="home.do" >Home page</a>
 <title>MVC Tire Store</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 </head>
 <h1>Welcome to Tire Store!</h1>
 <body>
 	<div class="container-fluid">
-		<form action="${tire }" method="GET">
+		<form action="getTire.do" method="GET">
 			Tire ID: <input type="text" name="tid" /> <input type="submit"
 				value="Show Tire" class="btn btn-primary" />
 		</form>
-		<form action="addTire" method="POST">
+		<form action="addTire.do" method="GET">
 			<input type="submit" value="Add Tire" class="btn btn-primary" />
 		</form>
 	</div>

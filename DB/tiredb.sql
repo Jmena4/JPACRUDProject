@@ -28,10 +28,10 @@ CREATE TABLE IF NOT EXISTS `tire` (
   `purchase_price` DECIMAL(11,2) NULL DEFAULT NULL,
   `product_description` TEXT NULL DEFAULT NULL,
   `origin_country_code` VARCHAR(2) NULL DEFAULT NULL,
-  `image_url` VARCHAR(45) NULL,
+  `image_url` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 2
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 SET SQL_MODE = '';
@@ -50,8 +50,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `tiredb`;
-INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (1, 'Sonata', '2012-02-02', 22.5, 173.00, 'A better choice', 'CN', NULL);
-INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (2, 'Sonomo', '2009-12-10', 22.5, 150.00, 'A not so better choice', 'US', NULL);
-INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (3, 'Bridestone', '2009-12-10', 17, 225.00, 'A not so better choice', 'US', NULL);
+INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (1, 'Sonata', '2012-02-02', 22.5, 173.00, 'A better choice', 'CN', 'NULL');
+INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (2, 'Sonomo', '2009-12-10', 22.5, 150.00, 'A not so better choice', 'US', 'NULL');
+INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (3, 'Bridgestone', '2009-12-10', 17, 225.00, 'A not so better choice', 'TX', 'NULL');
+INSERT INTO `tire` (`id`, `name`, `manufactured_date`, `size`, `purchase_price`, `product_description`, `origin_country_code`, `image_url`) VALUES (4, 'Falcon', '2002-11-12', 16, 155.00, 'Buy at your own risk', 'JP', 'NULL');
 
 COMMIT;
+
