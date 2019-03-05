@@ -40,6 +40,7 @@
 							name="tire" value="${tire }" /> <input
 							class="btn btnResult btn-primary" type="submit" value="Edit" />
 					</form>
+					
 					<form action="deleteTire.do" method="POST" name="removed">
 						<input type="hidden" name="tireId" value="${tire.id }" /> <input
 							class="btn btnResult btn-primary" type="submit" value="DELETE" />
