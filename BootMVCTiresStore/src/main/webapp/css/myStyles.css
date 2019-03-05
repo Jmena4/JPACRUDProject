@@ -1,8 +1,46 @@
 body {
-	background-color: lightgray;
+	background-color: white;
+	background-image:
+		url("https://truckfreighter.com/wp-content/uploads/2018/06/best-drive-tires-for-semi-truck.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position: bottom;
+	background-size: cover;
+	vertical-align: middle;
 }
 
-body > h1 {
-	text-align: center;
+body>h1 {
+	text-align: center; 
 	font-family: cursive;
+	color: red;
+}
+
+body > div {
+	align-conpx;
+	
+}
+body > dl{
+	text-align: left;
+	margin-right: 50px;
+}
+body > div > div > form:nth-child(1){
+	
+	left: 50	
+	color: red;
+}
+body > div > div > form:nth-child(2) > input{
+	align-items: center;
+}
+body > h2{
+	color: red;
+}
+body > div > div {
+	color: white;
+}
+a:hover {
+    color: purple;
+    text-decoration: underline;
+}
+body > div > form {
+	color: white;
 }
