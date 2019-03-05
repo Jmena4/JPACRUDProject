@@ -15,11 +15,14 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	crossorigin="anonymous"></script>
+	<jsp:include page="bootstrapHead.jsp"></jsp:include>
 <a href="home.do">Home page</a>
-<title>Insert title here</title>
+<title>Tire</title>
 </head>
 <body>
-<h3>Add New Tire</h3>
+	<h3>Add New Tire</h3>
+	<div class="container-fluid">
+		<div class="row pt-5 m-auto">
 	<form action="addTire.do" method="POST">
 		<div class="form-group">
 			<label class="searchlabel" for="search">Name:</label> <input
@@ -47,5 +50,8 @@
 
 		</div>
 	</form>
+	</div>
+	</div>
+	<jsp:include page="bootstrapFoot.jsp"></jsp:include>
 </body>
 </html>
