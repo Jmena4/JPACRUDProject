@@ -33,4 +33,6 @@ Your project and database are deployed to your AWS instance.
 	* Encapsulation
 * Java Collections Framework
 * MySQL Databases
-* Add other technologies 
+* CSS/HTML
+* Spring MVC Boot
+* AWS-EC2
