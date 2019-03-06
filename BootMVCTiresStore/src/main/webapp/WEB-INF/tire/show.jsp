@@ -15,38 +15,42 @@
 </head>
 <h2>${tire.name}</h2>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid justify-content-center">
 		<div class="row pt-5 m-auto">
 			<c:choose>
 				<c:when test="${! empty tire }">
 					<form action="editTire.do" method="POST">
-
-						<input type="text" value="${tire.name }" name="name"/> 
-						<input
-							type="text" value="${tire.productDescription }"
-							name="productDescription"/> 
-							<input type="date"
-							value="${tire.manufacturedDate }" name="manufacturedDate"/>
-						<input type="number" value="${tire.size }" name="size"/> 
-						<input type="number" value="${tire.purchasePrice }" name="purchasePrice"/> 
-						
-						<input
-
-							type="text" value="${tire.originCountryCode }"
-							name="originCountryCode"/> 
-						<input type="hidden"
-							name="tireId" value="${tire.id }" /> 
-						<input type="hidden"
-							name="tire" value="${tire }" /> <input
-							class="btn btnResult btn-primary" type="submit" value="Edit" />
+						<ul></ul>
+						<input type="text" value="${tire.name }" name="name" /> <br>
+						<input type="text" value="${tire.productDescription }"
+							name="productDescription" /> <br> <input type="date"
+							value="${tire.manufacturedDate }" name="manufacturedDate" /><br>
+						<input type="number" value="${tire.size }" name="size" /> <br>
+						<input type="number" value="${tire.purchasePrice }"
+							name="purchasePrice" /> <br> <input type="text"
+							value="${tire.originCountryCode }" name="originCountryCode" /> <br>
+						<input type="hidden" name="tireId" value="${tire.id }" /> <br>
+						<input type="hidden" name="tire" value="${tire }" />
+						<div class="container-fluid justify-content-center">
+							<input class="btn btnResult btn-primary" type="submit"
+								value="Edit" />
+						</div>
 					</form>
-					
-					<form action="deleteTire.do" method="POST" name="removed">
-						<input type="hidden" name="tireId" value="${tire.id }" /> <input
-							class="btn btnResult btn-primary" type="submit" value="DELETE" />
-					</form>
+					<br>
+					<br>
+					<br>
+
+					<div class="container-fluid ">
+						<form action="deleteTire.do" method="POST" name="removed">
+							<input type="hidden" name="tireId" value="${tire.id }" /> <input
+								class="btn btnResult btn-primary" type="submit" value="DELETE" />
+
+						</form>
+					</div>
 				</c:when>
+
 			</c:choose>
+
 		</div>
 	</div>
 	<jsp:include page="../bootstrapFoot.jsp"></jsp:include>
