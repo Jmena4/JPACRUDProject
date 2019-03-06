@@ -10,37 +10,55 @@ body {
 }
 
 body>h1 {
-	text-align: center; 
+	text-align: center;
 	font-family: cursive;
 	color: red;
 }
 
-body > div {
-	align-conpx;
+body>div {align-conpx;
 	
 }
-body > dl{
+
+body>dl {
 	text-align: left;
 	margin-right: 50px;
 }
-body > div > div > form:nth-child(1){
-	
-	left: 50	
-	color: red;
+
+body>div>div>form:nth-child(1) {
+	left: 50 color: red;
 }
-body > div > div > form:nth-child(2) > input{
+
+body>div>div>form:nth-child(2)>input {
 	align-items: center;
 }
-body > h2{
+
+body>h2 {
 	color: red;
 }
-body > div > div {
+
+body>div>div {
 	color: white;
 }
+
 a:hover {
-    color: purple;
-    text-decoration: underline;
+	color: purple;
+	text-decoration: underline;
 }
-body > div > form {
+
+body>div>form {
 	color: white;
 }
+
+.mainsection {
+	width: 100%;
+	float: left;
+	padding-top: 0px;
+	text-align: -webkit-center;
+}
+body > div > div > div{
+	width: 100%;
+	float: left;
+	padding-top: 0px;
+	text-align: -webkit-center;
+}
+
