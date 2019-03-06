@@ -14,8 +14,9 @@
 </head>
 <h1>Welcome to Spring MVC Tire Store!</h1>
 <body>
+<div class="mainsection justify-content-center">
 	<div class="container-fluid">
-		<div class="row pt-5 m-auto">
+		<div class="row pt-5 m-auto justify-content-center">
 			<form action="addTire.do" method="GET">
 				<input type="submit" value="Add Tire" class="btn btn-primary" />
 			</form>
@@ -25,6 +26,7 @@
 			Tire ID: <input type="text" name="tid" />
 				<input type="submit" value="Show Tire" class="btn btn-primary" />
 		</form>
+	</div>
 	</div>
 	<c:if test="${not empty allTires }">
 		<dl>
