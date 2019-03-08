@@ -71,7 +71,7 @@ public class TireController {
 		ModelAndView mv = new ModelAndView();
 		boolean isSuccessful = tireDAO.delete(tireId);
 		mv.addObject("removed", isSuccessful);
-		mv.setViewName("WEB-INF/index.jsp");
+		mv.setViewName("WEB-INF/tire/show.jsp");
 		return mv;
 	}
 }
