@@ -50,7 +50,6 @@ public class TireDAOJpaImpl implements TireDAO {
 		managedTire.setSize(tire.getSize());
 		managedTire.setOriginCountryCode(tire.getOriginCountryCode());
 		System.out.println(managedTire);
-//		em.persist(managedCustomer);
 		em.flush();
 //		Boolean rest = !em.contains(tire);
 		return managedTire;

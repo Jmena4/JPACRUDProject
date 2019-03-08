@@ -15,38 +15,70 @@
 </head>
 <h2>${tire.name}</h2>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid ">
 		<div class="row pt-5 m-auto">
 			<c:choose>
 				<c:when test="${! empty tire }">
 					<form action="editTire.do" method="POST">
-
-						<input type="text" value="${tire.name }" name="name"/> 
-						<input
+						Tire Name: <br> <input type="text" value="${tire.name }"
+							name="name" /> <br> Product Description: <br> <input
 							type="text" value="${tire.productDescription }"
-							name="productDescription"/> 
-							<input type="date"
-							value="${tire.manufacturedDate }" name="manufacturedDate"/>
-						<input type="number" value="${tire.size }" name="size"/> 
-						<input type="number" value="${tire.purchasePrice }" name="purchasePrice"/> 
-						
-						<input
+							name="productDescription" /> <br> Manufactured Date: <br>
+						<input type="date" value="${tire.manufacturedDate }"
+							name="manufacturedDate" /><br> Size: <br> <input
+							type="number" value="${tire.size }" name="size" /> <br>
+						Purchase Price: <br> <input type="number"
+							value="${tire.purchasePrice }" name="purchasePrice" /> <br>
+						Origin Country Code:<br> <input type="text"
+							value="${tire.originCountryCode }" name="originCountryCode" /> <br>
+						<input type="hidden" name="tireId" value="${tire.id }" /> <br>
+						<input type="hidden" name="tire" value="${tire }" />
+						<div class="container-fluid justify-content-center">
+							<input class="btn btnResult btn-primary" type="submit"
+								value="Save Edit" />
+						</div>
+					</form>
+					<br>
 
-							type="text" value="${tire.originCountryCode }"
-							name="originCountryCode"/> 
-						<input type="hidden"
-							name="tireId" value="${tire.id }" /> 
-						<input type="hidden"
-							name="tire" value="${tire }" /> <input
-							class="btn btnResult btn-primary" type="submit" value="Edit" />
-					</form>
-					
-					<form action="deleteTire.do" method="POST" name="removed">
-						<input type="hidden" name="tireId" value="${tire.id }" /> <input
-							class="btn btnResult btn-primary" type="submit" value="DELETE" />
-					</form>
+					<div class="container-fluid justify-content-center">
+						<form action="deleteTire.do" method="POST" name="removed">
+							<input type="hidden" name="tireId" value="${tire.id }" /> <input
+								class="btn btn-danger btn-sm" type="submit" value="DELETE THIS TIRE" />
+
+						</form>
+					</div>
+
 				</c:when>
+				<c:when test="${removed}">
+					<div class="col-12">
+						<h3>
+							<i class="fas fa-check" style="font-size: 34px; color: green"></i>
+							Tire is removed
+						</h3>
+						<br>
+					</div>
+					<div class="row">
+						<a href="index.jsp">Return to Main Menu</a>
+					</div>
+
+				</c:when>
+				<c:otherwise>
+					<div class="col-12">
+
+
+						<h3>
+							<i class="fa fa-exclamation-triangle" aria-hidden="true"
+								style="font-size: 34px; color: red"></i> No Tire found
+						</h3>
+						<br />
+					</div>
+					<div class="row">
+						<a href="index.jsp">Return to Main Menu</a>
+					</div>
+
+				</c:otherwise>
 			</c:choose>
+
 		</div>
 	</div>
 	<jsp:include page="../bootstrapFoot.jsp"></jsp:include>
