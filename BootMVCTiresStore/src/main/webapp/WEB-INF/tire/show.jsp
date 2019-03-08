@@ -15,40 +15,68 @@
 </head>
 <h2>${tire.name}</h2>
 <body>
-	<div class="container-fluid justify-content-center">
+	<div class="container-fluid ">
 		<div class="row pt-5 m-auto">
 			<c:choose>
 				<c:when test="${! empty tire }">
 					<form action="editTire.do" method="POST">
-						<ul></ul>
-						<input type="text" value="${tire.name }" name="name" /> <br>
-						<input type="text" value="${tire.productDescription }"
-							name="productDescription" /> <br> <input type="date"
-							value="${tire.manufacturedDate }" name="manufacturedDate" /><br>
-						<input type="number" value="${tire.size }" name="size" /> <br>
-						<input type="number" value="${tire.purchasePrice }"
-							name="purchasePrice" /> <br> <input type="text"
+						Tire Name: <br> <input type="text" value="${tire.name }"
+							name="name" /> <br> Product Description: <br> <input
+							type="text" value="${tire.productDescription }"
+							name="productDescription" /> <br> Manufactured Date: <br>
+						<input type="date" value="${tire.manufacturedDate }"
+							name="manufacturedDate" /><br> Size: <br> <input
+							type="number" value="${tire.size }" name="size" /> <br>
+						Purchase Price: <br> <input type="number"
+							value="${tire.purchasePrice }" name="purchasePrice" /> <br>
+						Origin Country Code:<br> <input type="text"
 							value="${tire.originCountryCode }" name="originCountryCode" /> <br>
 						<input type="hidden" name="tireId" value="${tire.id }" /> <br>
 						<input type="hidden" name="tire" value="${tire }" />
 						<div class="container-fluid justify-content-center">
 							<input class="btn btnResult btn-primary" type="submit"
-								value="Edit" />
+								value="Save Edit" />
 						</div>
 					</form>
 					<br>
-					<br>
-					<br>
 
-					<div class="container-fluid ">
+					<div class="container-fluid justify-content-center">
 						<form action="deleteTire.do" method="POST" name="removed">
 							<input type="hidden" name="tireId" value="${tire.id }" /> <input
-								class="btn btnResult btn-primary" type="submit" value="DELETE" />
+								class="btn btn-danger btn-sm" type="submit" value="DELETE THIS TIRE" />
 
 						</form>
 					</div>
-				</c:when>
 
+				</c:when>
+				<c:when test="${removed}">
+					<div class="col-12">
+						<h3>
+							<i class="fas fa-check" style="font-size: 34px; color: green"></i>
+							Tire is removed
+						</h3>
+						<br>
+					</div>
+					<div class="row">
+						<a href="index.jsp">Return to Main Menu</a>
+					</div>
+
+				</c:when>
+				<c:otherwise>
+					<div class="col-12">
+
+
+						<h3>
+							<i class="fa fa-exclamation-triangle" aria-hidden="true"
+								style="font-size: 34px; color: red"></i> No Tire found
+						</h3>
+						<br />
+					</div>
+					<div class="row">
+						<a href="index.jsp">Return to Main Menu</a>
+					</div>
+
+				</c:otherwise>
 			</c:choose>
 
 		</div>
